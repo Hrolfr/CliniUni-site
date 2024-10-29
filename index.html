@@ -1,36 +1,215 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-
-    <meta charset="utf-8">
-     
-    <meta name="viewpoint" content="width-device-width, initial-scale=1.0">   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="style.css/style.css">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
-    <title> CliniUni </title>
-   
+    <title>Avalie sua experiência na CliniUni</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f4f8; 
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            color: #28a745; 
+            margin: 10px 0;
+        }
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            color: #28a745; 
+        }
+        p {
+            text-align: center;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .question {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .stars {
+            font-size: 30px; 
+            color: #ccc;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .stars input {
+            display: none;
+        }
+        .stars label {
+            cursor: pointer;
+        }
+        .stars label:hover,
+        .stars label:hover ~ label,
+        .stars input:checked ~ label {
+            color: #f5c518; 
+        }
+        .radio-group {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .radio-group input {
+            display: none;
+        }
+        .radio-group label {
+            padding: 10px 20px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .radio-group input:checked + label {
+            background-color: #d9534f; 
+            color: white;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            resize: none; 
+        }
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            background-color: #28a745; 
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s; 
+        }
+        .submit-button:hover {
+            background-color: #218838; 
+            transform: translateY(-2px); 
+        }
+        .contact-info {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #555;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .contact-info strong {
+            color: #d9534f; 
+        }
+    </style>
 </head>
-
 <body>
-
-    <div class="p-3 mb-2 bg-info text-white" >
-        <img src=""> 
-        <header class="d-flex justify-content-center py-3"> 
-            <ul class="nav nav-pills">
-              <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Agendamento de exames</a></li>
-             <li class="nav-item"><a href="#" class="nav-link">Resultados de exames</a></li>
-             </ul></div>
-      </header>
-       
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+    <div class="container">
+        <div class="header">
+            <div class="logo">CliniUni</div>
+            <p>Completa e Acessível</p>
+        </div>
+        <h1>Avalie sua experiência na CliniUni</h1>
+        <p>Sua opinião é muito importante para nós! Por favor, nos ajude a melhorar ao compartilhar como foi sua última consulta.</p>
+        <div class="question">Atendimento na Recepção:</div>
+        <div class="stars">
+            <input type="radio" name="reception" id="reception-1">
+            <label for="reception-1">★</label>
+            <input type="radio" name="reception" id="reception-2">
+            <label for="reception-2">★</label>
+            <input type="radio" name="reception" id="reception-3">
+            <label for="reception-3">★</label>
+            <input type="radio" name="reception" id="reception-4">
+            <label for="reception-4">★</label>
+            <input type="radio" name="reception" id="reception-5">
+            <label for="reception-5">★</label>
+        </div>
+        <div class="question">Tempo de Espera:</div>
+        <div class="stars">
+            <input type="radio" name="waiting" id="waiting-1">
+            <label for="waiting-1">★</label>
+            <input type="radio" name="waiting" id="waiting-2">
+            <label for="waiting-2">★</label>
+            <input type="radio" name="waiting" id="waiting-3">
+            <label for="waiting-3">★</label>
+            <input type="radio" name="waiting" id="waiting-4">
+            <label for="waiting-4">★</label>
+            <input type="radio" name="waiting" id="waiting-5">
+            <label for="waiting-5">★</label>
+        </div>
+        <div class="question">Qualidade do Atendimento Médico:</div>
+        <div class="stars">
+            <input type="radio" name="medical" id="medical-1">
+            <label for="medical-1">★</label>
+            <input type="radio" name="medical" id="medical-2">
+            <label for="medical-2">★</label>
+            <input type="radio" name="medical" id="medical-3">
+            <label for="medical-3">★</label>
+            <input type="radio" name="medical" id="medical-4">
+            <label for="medical-4">★</label>
+            <input type="radio" name="medical" id="medical-5">
+            <label for="medical-5">★</label>
+        </div>
+        <div class="question">Ambiente e Instalações:</div>
+        <div class="stars">
+            <input type="radio" name="environment" id="environment-1">
+            <label for="environment-1">★</label>
+            <input type="radio" name="environment" id="environment-2">
+            <label for="environment-2">★</label>
+            <input type="radio" name="environment" id="environment-3">
+            <label for="environment-3">★</label>
+            <input type="radio" name="environment" id="environment-4">
+            <label for="environment-4">★</label>
+            <input type="radio" name="environment" id="environment-5">
+            <label for="environment-5">★</label>
+        </div>
+        <div class="question">Comunicação e Informações:</div>
+        <div class="stars">
+            <input type="radio" name="communication" id="communication-1">
+            <label for="communication-1">★</label>
+            <input type="radio" name="communication" id="communication-2">
+            <label for="communication-2">★</label>
+            <input type="radio" name="communication" id="communication-3">
+            <label for="communication-3">★</label>
+            <input type="radio" name="communication" id="communication-4">
+            <label for="communication-4">★</label>
+            <input type="radio" name="communication" id="communication-5">
+            <label for="communication-5">★</label>
+        </div>
+        <div class="question">Recomendaria a CliniUni a outras pessoas?</div>
+        <div class="radio-group">
+            <input type="radio" name="recommend" id="recommend-yes">
+            <label for="recommend-yes">Sim</label>
+            <input type="radio" name="recommend" id="recommend-no">
+            <label for="recommend-no">Não</label>
+        </div>
+        <div class="question">Deixe um comentário:</div>
+        <textarea rows="5" placeholder="Se você tiver algum feedback adicional, por favor, compartilhe conosco."></textarea>
+        <button class="submit-button">Enviar Avaliação</button>
+        <div class="contact-info">
+            <p>Para mais informações, entre em contato conosco:</p>
+            <p><strong>Email:</strong> contato@cliniuni.com.br</p>
+            <p><strong>Telefone:</strong> (11) 1234-5678</p>
+        </div>
+    </div>
 </body>
-
 </html>
